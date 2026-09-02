@@ -4,13 +4,12 @@ public class Name {
     private String myMiddle;
     private String myLast;
     
-    public Name (String first, String middle, String last) {
-       myFirst = first;
-       myMiddle = middle;
-       myLast = last;
-       fixFirst ( );
-       fixMiddle ( );
-       fixLast ( );
+    public Name (String first, String middle, String last){
+       myFirst = fixCase(first);
+       myMiddle = fixCase(middle);
+       myLast = fixCase(last);
+       
+       
     }
     
     public String lastFirst ( ) {
@@ -20,23 +19,28 @@ public class Name {
     public String fullName ( ) {
        return myFirst + " " + myMiddle + " " + myLast;
     }
-    
-    // bad style
-    private void fixFirst ( ) {
-       myFirst = myFirst.toLowerCase().trim();
-       myFirst = myFirst.substring(0,1).toUpperCase() + myFirst.substring(1);
-    }
-    
-    // bad style
-    private void fixMiddle ( ) {
-       myMiddle = myMiddle.toLowerCase().trim();
-       myMiddle = myMiddle.substring(0,1).toUpperCase() + myMiddle.substring(1);
-    }
-    
-    // bad style
-    private void fixLast ( ) {
-       myLast = myLast.toLowerCase().trim();
-       myLast = myLast.substring(0,1).toUpperCase() + myLast.substring(1);
+     public String fixCase(String np){
+      np = np.toLowerCase().trim();
+      np = np.substring(0,1).toUpperCase() + np.substring(1);
+      return np;
     }
  
  }
+   //  // bad style
+   //  private void fixFirst ( ) {
+   //     myFirst = myFirst.toLowerCase().trim();
+   //     myFirst = myFirst.substring(0,1).toUpperCase() + myFirst.substring(1);
+   //  }
+    
+   //  // bad style
+   //  private void fixMiddle ( ) {
+   //     myMiddle = myMiddle.toLowerCase().trim();
+   //     myMiddle = myMiddle.substring(0,1).toUpperCase() + myMiddle.substring(1);
+   //  }
+    
+   //  // bad style
+   //  private void fixLast ( ) {
+   //     myLast = myLast.toLowerCase().trim();
+   //     myLast = myLast.substring(0,1).toUpperCase() + myLast.substring(1);
+   //  }
+   

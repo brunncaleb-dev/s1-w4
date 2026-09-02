@@ -24,5 +24,15 @@ public class StringExamples{
           System.out.println(i);
           System.out.println(n);
 
+    }
+    public void testStr(){
+      String s = "     Tyler Park.    ";
+      String t = s.trim();
+      String up = t.toUpperCase();
+      String lo = t.toLowerCase();
+      System.out.println(t);
+      System.out.println(up);
+      System.out.println(lo);
+      System.out.println(s);
     } 
   }
